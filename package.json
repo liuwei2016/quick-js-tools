@@ -1,0 +1,46 @@
+{
+  "name": "quick-js-tools",
+  "version": "0.1.0",
+  "description": "前端工具库,基础工具库",
+  "main": "dist/quick-js-tools.cjs.js",
+  "module": "dist/quick-js-tools.esm.js",
+  "browser": "dist/index.js",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c && npm run copy",
+    "copy": "cp dist/quick-js-tools.esm.js demo && cp package.json dist",
+    "publish": "node scripts/publish.js",
+    "test": "ts-node test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuwei2016/quick-js-tools.git"
+  },
+  "keywords": [
+    "toolkit"
+  ],
+  "author": "liuwei2016",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liuwei2016/quick-js-tools/issues"
+  },
+  "homepage": "https://github.com/liuwei2016/quick-js-tools#readme",
+  "devDependencies": {
+    "@types/ms": "^0.7.31",
+    "commander": "^6.2.0",
+    "rollup": "^2.33.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "shelljs": "^0.8.4",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@liuwei2016/quick-js-tools": "0.0.1",
+    "@types/lodash-es": "^4.17.3",
+    "lodash-es": "^4.17.15"
+  }
+}
