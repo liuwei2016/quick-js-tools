@@ -5,6 +5,7 @@
   "main": "dist/quick-js-tools.cjs.js",
   "module": "dist/quick-js-tools.esm.js",
   "browser": "dist/index.js",
+  "type2": "module",
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c && npm run copy",
