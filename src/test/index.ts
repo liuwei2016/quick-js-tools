@@ -102,3 +102,13 @@ interface Person {
 //   };
   
 //   type SetPoint = (x: number, y: number) => void;
+
+const assert = new Proxy({}, {
+  set:function(target:{},warning: string| symbol,value:any,receiver:any):boolean{
+  if(!value){
+      console.error(warning)
+  }
+  return !!value
+}
+})
+
