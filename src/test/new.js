@@ -41,7 +41,6 @@ function new_object() {
   // 确保返回对象
   return typeof result === "object" ? result : obj;
 }
-
 /**
  * 
  * */ 
@@ -51,7 +50,6 @@ function create() {
     let result = Con.apply(obj, arguments);
     return typeof result === "object" ? result : obj;
 }
-
 
 const man1 = new_object(Factory, "lalala");
 const man2 = create(Factory, "bbbb");
