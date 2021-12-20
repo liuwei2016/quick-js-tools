@@ -12,14 +12,16 @@ class MyPromise{
         if(this.status === PENDING){
             this.status = FULFILLED;
             this.value = value;
-            this.resolve(value);
+            return this
+            // this.resolve(value);
         }
     }
     reject(reason){
         if(this.status === PENDING){
             this.status = REJECTED;
             this.reason = reason;
-            this.reject(reason);
+            return this
+            // this.reject(reason);
         }
     }
     then(onFulfilled, onRejected){
@@ -33,9 +35,9 @@ class MyPromise{
 }
 
 const p = new MyPromise((resolve, reject) => {
-    setTimeout(() => {
+    // setTimeout(() => {
         resolve(1);
-    }, 1000);
+    // }, 1000);
 });
 p.then(value => {
     console.log(value);
