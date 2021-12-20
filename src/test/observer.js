@@ -3,7 +3,7 @@ class Observer {
         this.value = value||0 ;
     }
     update(fn){
-      fn(this.value);
+      fn.call(this,this.value);
     }
 }
 
