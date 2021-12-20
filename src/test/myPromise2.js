@@ -63,6 +63,31 @@ class MyPromise {
             resolve(value);
         });
     }
+    static all(array) {
+        let result = [];
+        let index = 0;
+        new MyPromise((resolve, reject) => {
+            function addData(key,value){
+                result[key] = value;
+                index++;
+                if(index === promiseArray.length){
+                    resolve(result);
+                }
+            }
+            for(let i = 0; i < array.length; i++){
+                let current = array[i];
+                if(current instanceof MyPromise){
+                    array[i].then(value => {
+                        addData(i,value);
+                    }, reason => {
+                        reject(reason);
+                    });
+                }else{ //普通值
+                    addData(i,current);
+                }
+            }
+        });
+    }
     finally(callback) {
         return this.then(value=>{
             return MyPromise.resolve(callback()).then(()=>value);
