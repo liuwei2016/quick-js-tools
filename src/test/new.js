@@ -45,10 +45,14 @@ function new_object() {
  * 
  * */ 
 function create() {
+  // 取出构造函数
     let Con = [].shift.call(arguments);
+  //创建空对象 并且原型指向到构造函数的原型
     let obj = Object.create(Con.prototype);
+  //this 指向
     let result = Con.apply(obj, arguments);
-    return typeof result === "object" ? result : obj;
+  //返回对象
+    return (typeof result === "object" && result != null) ? result : obj;
 }
 
 const man1 = new_object(Factory, "lalala");

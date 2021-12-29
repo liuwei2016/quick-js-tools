@@ -82,3 +82,7 @@ anywhere
 浏览器访问
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+
+### node js 调试
+ node --inspect-brk  myPromiseOk.js 
