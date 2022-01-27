@@ -11,7 +11,8 @@
     "build": "rollup -c && npm run copy",
     "copy": "cp dist/quick-js-tools.esm.js demo && cp package.json dist && cp  demo/demo.html dist",
     "publish": "node scripts/publish.js",
-    "test": "jest"
+    "test": "jest --watchAll",
+    "test2": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.2",
