@@ -7,7 +7,6 @@ export const isEmail = (value) =>
     value
   );
 
-
   /**
    * 验证身份证号, 支持1/2代(15位/18位数字)
 @param { string } value
@@ -146,4 +145,10 @@ export const isPostcode = value => /^(0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-7]|5[1-7
     } else {
         return str;
     }
+}
+
+
+
+module.exports = {
+    isEmail,
 }
