@@ -227,3 +227,19 @@ const dd = arrayToTreeByMap2(arr, 0);
 // console.log(JSON.stringify(bb));
 // console.log(JSON.stringify(cc));
 console.log(JSON.stringify(dd));
+
+// 树结构 如何转为数组
+function treeToArray(data,   parentId) {
+    const result = [];
+    let temp;
+    for (const item of data) {
+        if (item.pid === parentId) {
+            temp = {...item, children: []};
+            result.push(temp);
+            temp.children = treeToArray(data,   item.id);
+        }
+    }
+    return result;
+}
+const result = treeToArray(dd, 1)
+console.log(result);

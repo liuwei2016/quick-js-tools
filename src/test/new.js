@@ -38,8 +38,14 @@ function new_object() {
   // 绑定this 执行构造函数
   console.log(arguments.length);
   let result = Con.apply(obj, arguments);
-  // 确保返回对象
   return typeof result === "object" ? result : obj;
+}
+
+function myNew(...args){
+  const Constructor = args.shift();
+  const obj = Object.create(Constructor.prototype);
+  const result = Constructor.apply(obj, args);
+  return typeof result === 'object' ? result : obj;
 }
 /**
  * 
