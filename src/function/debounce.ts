@@ -1,12 +1,25 @@
-type Options = {
+export type Options = {
   leading?: boolean;
-  result?: any;
+  result?: Function;
 };
-interface HandleFnFace {
+export interface HandleFnFace {
   (value: any): void;
   cancel?: Function;
 }
-export function debounce(fn: Function, delay: number, option: Options = {}) {
+/**
+ * fn: function
+ *
+ * delay: number for ms
+ *
+ * options: {leading: boolean 是否立即执行, result: 回调函数}
+ *
+ * return: Function
+ * */
+export function debounce(
+  fn: Function,
+  delay: number,
+  option: Options = {}
+): Function {
   var timer: any = null;
   if (!option) option = {};
   let leading = option.leading || false;
