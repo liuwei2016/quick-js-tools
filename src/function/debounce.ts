@@ -1,13 +1,22 @@
-function debounce(fn, delay, option) {
-  var timer = null;
+type Options = {
+  leading?: boolean;
+  result?: any;
+};
+interface HandleFnFace {
+  (value: any): void;
+  cancel?: Function;
+}
+export function debounce(fn: Function, delay: number, option: Options = {}) {
+  var timer: any = null;
   if (!option) option = {};
-  leading = option.leading || false;
-  result = option.result || null;
-  var handleFn = function () {
+  let leading = option.leading || false;
+  let result = option.result || null;
+
+  var handleFn: HandleFnFace = function (this: any, ...args): any {
     if (timer) clearTimeout(timer);
     // 获取this和argument
     var _this = this;
-    var _arguments = arguments;
+    var _arguments = args;
 
     if (leading) {
       // 通过一个变量来记录是否立即执行
