@@ -1,4 +1,4 @@
-const loadDocumentByXHR =function (src) {
+const loadDocumentByXHR = function (src) {
     if (src && typeof src === 'string') {
       const xhr = new XMLHttpRequest()
       xhr.open('GET', src, true)
@@ -20,5 +20,4 @@ const loadDocumentByXHR =function (src) {
     }
   }
 
-const isNumber = value => /^\d{1,}$/g.test(value);
-console.log(isNumber('123'));
+ 

@@ -2,7 +2,7 @@ type Options = {
   defaultValue?: any;
 };
 type K = string | (string | number)[];
-function get(o: any, k: K, options: Options = {}): any {
+export function objectGetKey(o: any, k: K, options: Options = {}): any {
   let target = o;
   if (k === null || k === undefined) {
     return options.defaultValue || null;
@@ -32,8 +32,7 @@ function get(o: any, k: K, options: Options = {}): any {
   }
   return target;
 }
-export default get;
-module.exports = get;
+// module.exports = get;
 
 // const obj = { a: { b: { c: 0, d: [1, 2, 3] } } };
 // const options = { defaultValue: [123] };
