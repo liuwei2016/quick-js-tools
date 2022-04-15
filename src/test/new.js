@@ -41,6 +41,7 @@ function new_object() {
   return typeof result === "object" ? result : obj;
 }
 
+// 最简洁的new
 function myNew(...args){
   const Constructor = args.shift();
   const obj = Object.create(Constructor.prototype);

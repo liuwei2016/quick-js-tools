@@ -26,8 +26,8 @@ function addEntryBuildConfigs(entryArr){
   return results
 }
 
-const results = addEntryBuildConfigs(['src/arr/index.ts'])
-console.log(results)
+// const results = addEntryBuildConfigs(['src/arr/index.ts'])
+// console.log(results)
 
 export default [
   // UMD for browser-friendly build
@@ -59,5 +59,10 @@ export default [
       {  file: pkg.module, format: 'es', exports: 'auto' }
     ]
   },
-    ...addEntryBuildConfigs(['src/arr/index.ts'])
+    ...addEntryBuildConfigs([
+      'src/arr/index.ts',
+      'src/check/index.ts',
+      'src/function/index.ts',
+      'src/obj/index.ts',
+    ])
 ];

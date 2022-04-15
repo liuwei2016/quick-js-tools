@@ -1,3 +1,7 @@
+interface HandleFnFace {
+  (value: any): void;
+  cancel?: Function;
+}
 export function throttle(fn, interval, option): Function {
   type Timer = any;
   var last = 0;
@@ -6,11 +10,6 @@ export function throttle(fn, interval, option): Function {
 
   var trailing = option.trailing || false;
   var result = option.result || null;
-
-  interface HandleFnFace {
-    (value: any): void;
-    cancel?: Function;
-  }
 
   var handleFn: HandleFnFace = function (this, ...args) {
     // this和argument
